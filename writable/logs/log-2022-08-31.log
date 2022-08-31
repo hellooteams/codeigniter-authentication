@@ -1,0 +1,53 @@
+ERROR - 2022-08-31 11:05:01 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'bashinvite', 3306, '', 0)
+#1 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Model.php(249): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\app\Controllers\SigninController.php(20): CodeIgniter\BaseModel->first()
+#7 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\CodeIgniter.php(904): App\Controllers\SigninController->loginAuth()
+#8 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#9 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DILIP\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Model.php(249): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#5 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\app\Controllers\SigninController.php(20): CodeIgniter\BaseModel->first()
+#6 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\CodeIgniter.php(904): App\Controllers\SigninController->loginAuth()
+#7 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#8 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DILIP\Downloads\codeig\codeigniter4-CodeIgniter4-459e00e\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DILIP\\...')
+#11 {main}
+CRITICAL - 2022-08-31 11:05:01 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(249): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(622): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\SigninController.php(20): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\SigninController->loginAuth()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-31 11:06:01 --> authGuard filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 340.
+ 1 SYSTEMPATH\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('authGuard')
+ 2 SYSTEMPATH\CodeIgniter.php(422): CodeIgniter\Filters\Filters->enableFilter('authGuard', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
